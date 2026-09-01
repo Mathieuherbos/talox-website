@@ -12,11 +12,13 @@
 <meta property="og:title" content="Agent IA pour comptables, avocats et consultants | TALOX">
 <meta property="og:description" content="Un standard géré pour votre cabinet, sans jamais rater un client. Agent vocal et chatbot IA pour services professionnels.">
 <meta property="og:url" content="https://talox.be/secteurs/services-professionnels.html">
+<meta property="og:image" content="https://talox.be/images/og-talox.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://talox.be/images/og-talox.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
 <script src="../js/main.js" defer></script>
@@ -26,27 +28,34 @@
 
 <header class="site-header">
   <div class="container">
-    <a href="../" class="logo" aria-label="TALOX, accueil">TALOX<span>.</span></a>
-    <nav class="main-nav" aria-label="Navigation principale">
+    <a href=".././" class="logo" aria-label="TALOX, accueil">
+      <span class="logo-dot" aria-hidden="true"></span>TALOX
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <ul>
-        <li><a href="../">Accueil</a></li>
-        <li><a href="../index.html#services">Services</a></li>
+        <li><a href=".././" data-i18n="nav.home"></a></li>
+        <li><a href="../index.html#services" data-i18n="nav.services"></a></li>
         <li class="has-dropdown">
-          <a href="../index.html#secteurs" aria-haspopup="true">Secteurs</a>
+          <a href="../index.html#secteurs" aria-haspopup="true" data-i18n="nav.sectors"></a>
           <div class="dropdown">
-            <a href="immobilier.html">Immobilier</a>
-            <a href="sante-bien-etre.html">Santé &amp; bien-être</a>
-            <a href="horeca-restauration.html">Horeca &amp; restauration</a>
-            <a href="services-professionnels.html" aria-current="page">Services professionnels</a>
-            <a href="artisans-btp.html">Artisans &amp; BTP</a>
-            <a href="ecommerce-retail.html">E-commerce &amp; retail</a>
+            <a href="../secteurs/immobilier.html" data-i18n="sectorNames.immobilier"></a>
+            <a href="../secteurs/sante-bien-etre.html" data-i18n="sectorNames.sante-bien-etre"></a>
+            <a href="../secteurs/horeca-restauration.html" data-i18n="sectorNames.horeca-restauration"></a>
+            <a href="../secteurs/services-professionnels.html" aria-current="page" data-i18n="sectorNames.services-professionnels"></a>
+            <a href="../secteurs/artisans-btp.html" data-i18n="sectorNames.artisans-btp"></a>
+            <a href="../secteurs/ecommerce-retail.html" data-i18n="sectorNames.ecommerce-retail"></a>
           </div>
         </li>
-        <li><a href="../tarifs.html">Tarifs</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../tarifs.html" data-i18n="nav.pricing"></a></li>
+        <li><a href="../index.html#contact" data-i18n="nav.contact"></a></li>
       </ul>
       <div class="header-actions">
-        <a href="../index.html#contact" class="btn btn-primary btn-sm">Démarrer un projet</a>
+        <div class="lang-switcher" role="group" aria-label="Choix de la langue">
+          <button class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
+        </div>
+        <a href="../index.html#contact" class="btn btn-primary btn-sm" data-i18n="nav.cta"></a>
       </div>
     </nav>
     <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
@@ -58,21 +67,20 @@
 <main id="main">
 
   <nav class="breadcrumb container" aria-label="Fil d'Ariane">
-    <a href="../">Accueil</a> / <a href="../index.html#secteurs">Secteurs</a> / <span>Services professionnels</span>
+    <a href="../" data-i18n="breadcrumbHome"></a> / <a href="../index.html#secteurs" data-i18n="breadcrumbSectors"></a> / <span data-i18n="sectorNames.services-professionnels"></span>
   </nav>
 
-  <!-- CONTENU EDITABLE: début -->
+  <!-- CONTENU EDITABLE: début (voir sector.* dans le script window.TALOX_I18N en bas de page) -->
 
-  <!-- Hero secteur -->
   <section class="hero" style="padding-top:2rem;">
     <div class="container">
       <div>
-        <span class="eyebrow">Services professionnels</span>
-        <h1>Un standard géré pour votre cabinet, sans jamais rater un client</h1>
-        <p class="hero-subtitle">Un agent IA qui filtre, qualifie et prend rendez-vous pendant que vous êtes en rendez-vous ou en audience.</p>
+        <span class="eyebrow" data-i18n="sector.eyebrow"></span>
+        <h1 data-i18n="sector.h1"></h1>
+        <p class="hero-subtitle" data-i18n="sector.heroSub"></p>
         <div class="cta-row">
-          <a href="../index.html#contact" class="btn btn-primary">Démarrer un projet</a>
-          <a href="../tarifs.html" class="btn btn-secondary">Voir les tarifs</a>
+          <a href="../index.html#contact" class="btn btn-primary" data-i18n="cta.start"></a>
+          <a href="../tarifs.html" class="btn btn-secondary" data-i18n="cta.allPricing"></a>
         </div>
       </div>
       <div class="hero-visual">
@@ -80,150 +88,119 @@
           <div class="demo-chat-header">
             <div class="demo-chat-avatar">T</div>
             <div>
-              <div class="demo-chat-title">Agent TALOX — Services professionnels</div>
-              <div class="demo-chat-status">En ligne</div>
+              <div class="demo-chat-title">TALOX — <span data-i18n="sectorNames.services-professionnels"></span></div>
+              <div class="demo-chat-status" data-i18n="demoStatus"></div>
             </div>
           </div>
-          <div class="demo-chat-body" style="animation:none;">
-              <div class="demo-msg from-client">Bonjour, j'aurais besoin d'un rendez-vous pour ma déclaration fiscale.</div>
-              <div class="demo-msg from-agent">Bonjour 👋 Bien sûr, je peux vous proposer mardi 14h ou mercredi 9h.</div>
-              <div class="demo-msg from-client">Mardi 14h, merci.</div>
-              <div class="demo-msg from-agent">C'est confirmé ✅, vous recevrez une confirmation par email.</div>
+          <div class="demo-chat-body" style="animation:none;" data-i18n-hero-dialog>
+              <div class="demo-msg from-client" data-i18n="sector.heroDialog.0.text"></div>
+              <div class="demo-msg from-agent" data-i18n="sector.heroDialog.1.text"></div>
+              <div class="demo-msg from-client" data-i18n="sector.heroDialog.2.text"></div>
+              <div class="demo-msg from-agent" data-i18n="sector.heroDialog.3.text"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Scénario de douleur -->
   <section class="section-alt">
     <div class="container">
       <div class="card pain-card" style="max-width:760px; margin:0 auto;">
-        <span class="pain-time">09h15</span>
-        <p style="font-size:1.05rem;">Deux appels arrivent en même temps pendant un rendez-vous client. L'un des deux reste sans réponse et ne rappelle pas.</p>
+        <span class="pain-time" data-i18n="sector.painTime"></span>
+        <p style="font-size:1.05rem;" data-i18n="sector.painScenario"></p>
       </div>
     </div>
   </section>
 
-  <!-- Comment ça marche pour vous -->
   <section>
     <div class="container">
       <div class="section-intro">
-        <span class="eyebrow">Adapté à votre métier</span>
-        <h2>Comment ça marche pour vous</h2>
+        <span class="eyebrow" data-i18n="howEyebrow"></span>
+        <h2 data-i18n="howTitle"></h2>
       </div>
       <div class="grid grid-3">
-        <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
-          <h3>Confidentialité des dossiers</h3>
-          <p>Aucune information sensible sur un dossier n'est traitée par l'agent, uniquement la prise de contact.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></div>
-          <h3>Agenda cabinet synchronisé</h3>
-          <p>Les rendez-vous sont proposés selon vos disponibilités réelles et le type de consultation.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
-          <h3>Filtrage du démarchage</h3>
-          <p>Les appels commerciaux non sollicités sont identifiés et ne vous dérangent pas inutilement.</p>
-        </div>
+        <div class="card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div><h3 data-i18n="sector.how1t"></h3><p data-i18n="sector.how1d"></p></div>
+        <div class="card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></div><h3 data-i18n="sector.how2t"></h3><p data-i18n="sector.how2d"></p></div>
+        <div class="card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div><h3 data-i18n="sector.how3t"></h3><p data-i18n="sector.how3d"></p></div>
       </div>
     </div>
   </section>
 
-  <!-- Briques d'exemples -->
   <section class="section-alt">
     <div class="container">
       <div class="section-intro">
-        <span class="eyebrow">Cas d'usage</span>
-        <h2>Des exemples concrets</h2>
+        <span class="eyebrow" data-i18n="usecaseEyebrow"></span>
+        <h2 data-i18n="usecaseTitle"></h2>
       </div>
       <div style="display:flex; flex-direction:column; gap:1.5rem;">
         <div class="card usecase-card">
-          <div class="usecase-content">
-            <h3>Qualification du motif d'appel</h3>
-            <p class="text-muted">Le sujet de la demande est identifié avant la prise de rendez-vous, pour préparer le bon interlocuteur.</p>
-          </div>
-          <div class="usecase-dialog">
-            <div class="demo-msg from-client">C'est pour une question de TVA sur un contrat en cours.</div>
-              <div class="demo-msg from-agent">Je transmets à votre comptable référent, avec un rendez-vous cette semaine.</div>
-          </div>
+          <div class="usecase-content"><h3 data-i18n="sector.uc1t"></h3><p class="text-muted" data-i18n="sector.uc1d"></p></div>
+          <div class="usecase-dialog"><div class="demo-msg from-client" data-i18n="sector.uc1dialog.0.text"></div>
+              <div class="demo-msg from-agent" data-i18n="sector.uc1dialog.1.text"></div></div>
         </div>
         <div class="card usecase-card">
-          <div class="usecase-content">
-            <h3>Prise de rendez-vous cabinet</h3>
-            <p class="text-muted">Le rendez-vous est ajouté à votre agenda, avec confirmation automatique au client.</p>
-          </div>
-          <div class="usecase-dialog">
-            <div class="demo-msg from-agent">Votre rendez-vous du mardi 14h est confirmé.</div>
-              <div class="demo-msg from-client">Merci, à mardi.</div>
-          </div>
+          <div class="usecase-content"><h3 data-i18n="sector.uc2t"></h3><p class="text-muted" data-i18n="sector.uc2d"></p></div>
+          <div class="usecase-dialog"><div class="demo-msg from-agent" data-i18n="sector.uc2dialog.0.text"></div>
+              <div class="demo-msg from-client" data-i18n="sector.uc2dialog.1.text"></div></div>
         </div>
+        
       </div>
     </div>
   </section>
 
-  <!-- Consigne -->
   <section>
     <div class="container">
       <div class="card consigne-card" style="max-width:700px; margin:0 auto;">
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></div>
-        <div>
-          <h3>Un appel de démarchage commercial arrive</h3>
-          <p class="consigne-quote">"Les appels de prospection non sollicités sont filtrés, seuls les vrais dossiers clients vous sont transmis."</p>
-        </div>
+        <div><h3 data-i18n="sector.consigneTitle"></h3><p class="consigne-quote">"<span data-i18n="sector.consigneQuote"></span>"</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Garanties -->
   <section class="section-alt">
     <div class="container text-center">
       <div class="section-intro">
-        <span class="eyebrow">Garanties</span>
-        <h2>Sans risque pour votre activité</h2>
+        <span class="eyebrow" data-i18n="guaranteeEyebrow"></span>
+        <h2 data-i18n="guaranteeTitle"></h2>
       </div>
       <div class="guarantee-list">
-        <span class="guarantee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> RGPD &amp; hébergement UE</span>
-        <span class="guarantee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> Sans engagement long</span>
-        <span class="guarantee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> Mise en place rapide</span>
-        <span class="guarantee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> Confidentialité des dossiers clients</span>
+        <span class="guarantee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> <span data-i18n="guarantee.gdpr"></span></span>
+        <span class="guarantee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> <span data-i18n="guarantee.noCommit"></span></span>
+        <span class="guarantee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> <span data-i18n="guarantee.fast"></span></span>
+        <span class="guarantee-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> <span data-i18n="sector.extraGuarantee"></span></span>
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
   <section>
     <div class="container">
       <div class="card pricing-card" style="max-width:480px; margin:0 auto;">
-        <h3>Répondeur IA vocal — Services professionnels</h3>
-        <p class="price-from">À partir de</p>
-        <p class="price-value">149 € /mois</p>
-        <a href="../tarifs.html" class="btn btn-secondary btn-block mt-2">Voir tous les tarifs</a>
+        <h3 data-i18n="sector.pricingLabel"></h3>
+        <p class="price-from" data-i18n="fromLabel"></p>
+        <p class="price-value" data-i18n="sector.pricingFrom"></p>
+        <a href="../tarifs.html" class="btn btn-secondary btn-block mt-2" data-i18n="cta.allPricing"></a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ secteur -->
   <section id="faq" class="section-alt">
     <div class="container">
       <div class="section-intro">
-        <span class="eyebrow">Questions fréquentes</span>
-        <h2>Spécifique services professionnels</h2>
+        <span class="eyebrow" data-i18n="faqEyebrow"></span>
+        <h2><span data-i18n="faqTitlePrefix"></span> <span data-i18n="sectorNames.services-professionnels"></span></h2>
       </div>
       <div class="faq-list">
         <details class="faq-item">
-          <summary class="faq-question">L'agent a-t-il accès à mes dossiers clients ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-          <p class="faq-answer">Non, il gère uniquement la prise de contact et de rendez-vous, sans accès aux dossiers.</p>
+          <summary class="faq-question"><span data-i18n="sector.faqQ.0"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+          <p class="faq-answer" data-i18n="sector.faqA.0"></p>
         </details>
         <details class="faq-item">
-          <summary class="faq-question">Peut-il filtrer les appels de démarchage ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-          <p class="faq-answer">Oui, une règle peut être configurée pour identifier et écarter les appels commerciaux non sollicités.</p>
+          <summary class="faq-question"><span data-i18n="sector.faqQ.1"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+          <p class="faq-answer" data-i18n="sector.faqA.1"></p>
         </details>
         <details class="faq-item">
-          <summary class="faq-question">Est-ce adapté à un petit cabinet indépendant ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-          <p class="faq-answer">Oui, l'abonnement Essentiel est pensé pour les structures d'une à quelques personnes.</p>
+          <summary class="faq-question"><span data-i18n="sector.faqQ.2"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+          <p class="faq-answer" data-i18n="sector.faqA.2"></p>
         </details>
       </div>
     </div>
@@ -231,13 +208,13 @@
 
   <!-- CONTENU EDITABLE: fin -->
 
-  <section id="contact" class="section-dark">
+  <section id="contact" class="section-highlight">
     <div class="container text-center">
-      <h2>Prêt à libérer votre standard ?</h2>
-      <p class="text-muted mt-2">Réponse garantie sous 24h · Aucun engagement</p>
+      <h2 data-i18n="sector.ctaTitle"></h2>
+      <p class="text-muted mt-2" data-i18n="form.note"></p>
       <div class="cta-row" style="justify-content:center; margin-top:1.5rem;">
-        <a href="../index.html#contact" class="btn btn-accent">Démarrer un projet</a>
-        <a href="mailto:contact@talox.be" class="btn btn-ghost">Poser une question</a>
+        <a href="../index.html#contact" class="btn btn-primary" data-i18n="cta.start"></a>
+        <a href="mailto:contact@talox.be" class="btn btn-ghost" data-i18n="cta.ask"></a>
       </div>
     </div>
   </section>
@@ -248,43 +225,47 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="../" class="logo">TALOX<span>.</span></a>
-        <p>Agence belge d'automatisation IA, basée à Bruxelles.</p>
+        <a href=".././" class="logo"><span class="logo-dot" aria-hidden="true"></span>TALOX</a>
+        <p data-i18n="footer.tagline"></p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="footer.servicesTitle"></h4>
         <ul>
-          <li><a href="../index.html#services">Répondeurs IA vocaux</a></li>
-          <li><a href="../index.html#services">Chatbots &amp; réponses auto</a></li>
-          <li><a href="../index.html#services">Développements sur mesure</a></li>
-          <li><a href="../tarifs.html">Tarifs</a></li>
+          <li><a href="../index.html#services" data-i18n="services.s1"></a></li>
+          <li><a href="../index.html#services" data-i18n="services.s2"></a></li>
+          <li><a href="../index.html#services" data-i18n="services.s3"></a></li>
+          <li><a href="../tarifs.html" data-i18n="nav.pricing"></a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Secteurs</h4>
+        <h4 data-i18n="footer.sectorsTitle"></h4>
         <ul>
-          <li><a href="immobilier.html">Immobilier</a></li>
-          <li><a href="sante-bien-etre.html">Santé &amp; bien-être</a></li>
-          <li><a href="horeca-restauration.html">Horeca</a></li>
-          <li><a href="services-professionnels.html">Services pro</a></li>
-          <li><a href="artisans-btp.html">Artisans &amp; BTP</a></li>
-          <li><a href="ecommerce-retail.html">E-commerce</a></li>
+          <li><a href="../secteurs/immobilier.html" data-i18n="sectorNames.immobilier"></a></li>
+          <li><a href="../secteurs/sante-bien-etre.html" data-i18n="sectorNames.sante-bien-etre"></a></li>
+          <li><a href="../secteurs/horeca-restauration.html" data-i18n="sectorNames.horeca-restauration"></a></li>
+          <li><a href="../secteurs/services-professionnels.html" data-i18n="sectorNames.services-professionnels"></a></li>
+          <li><a href="../secteurs/artisans-btp.html" data-i18n="sectorNames.artisans-btp"></a></li>
+          <li><a href="../secteurs/ecommerce-retail.html" data-i18n="sectorNames.ecommerce-retail"></a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="footer.contactTitle"></h4>
         <ul>
           <li><a href="mailto:contact@talox.be">contact@talox.be</a></li>
-          <li><a href="../index.html#contact">Formulaire de contact</a></li>
-          <li>Bruxelles, Belgique</li>
+          <li><a href="../index.html#contact" data-i18n="footer.formLink"></a></li>
+          <li data-i18n="footer.location"></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> TALOX. Tous droits réservés.</span>
-      <span>RGPD · Hébergement UE</span>
+      <span>© <span data-year>2026</span> TALOX. <span data-i18n="footer.rights"></span></span>
+      <span data-i18n="footer.compliance"></span>
     </div>
   </div>
 </footer>
+
+<script>
+window.TALOX_I18N = {"fr":{"nav":{"home":"Accueil","services":"Services","sectors":"Secteurs","pricing":"Tarifs","contact":"Contact","cta":"Démarrer un projet"},"footer":{"tagline":"Agence belge d'automatisation IA, basée à Bruxelles.","servicesTitle":"Services","sectorsTitle":"Secteurs","contactTitle":"Contact","formLink":"Formulaire de contact","location":"Bruxelles, Belgique","rights":"Tous droits réservés.","compliance":"RGPD · Hébergement UE"},"sectorNames":{"immobilier":"Immobilier","sante-bien-etre":"Santé & bien-être","horeca-restauration":"Horeca & restauration","services-professionnels":"Services professionnels","artisans-btp":"Artisans & BTP","ecommerce-retail":"E-commerce & retail"},"cta":{"start":"Démarrer un projet","ask":"Poser une question","details":"Voir le détail","discover":"Découvrir","allPricing":"Voir tous les tarifs"},"services":{"s1":"Répondeurs IA vocaux","s2":"Chatbots & réponses auto","s3":"Développements sur mesure"},"guarantee":{"gdpr":"RGPD & hébergement UE","noCommit":"Sans engagement long","fast":"Mise en place rapide"},"form":{"firstName":"Prénom","firstNameReq":"Prénom *","firstNamePh":"Jean","lastName":"Nom","lastNameReq":"Nom *","lastNamePh":"Dupont","email":"Email professionnel","emailReq":"Email professionnel *","emailPh":"jean@entreprise.be","company":"Entreprise","companyPh":"Nom de votre société","project":"Votre projet","projectReq":"Votre projet *","projectPh":"Décrivez votre besoin en quelques lignes...","submit":"Envoyer ma demande","sending":"Envoi en cours...","error":"Une erreur est survenue. Réessayez ou écrivez à contact@talox.be","note":"Réponse garantie sous 24h · Aucun engagement","success":"Message envoyé ! Nous vous répondrons sous 24 heures."},"breadcrumbHome":"Accueil","breadcrumbSectors":"Secteurs","demoStatus":"En ligne","howEyebrow":"Adapté à votre métier","howTitle":"Comment ça marche pour vous","usecaseEyebrow":"Cas d'usage","usecaseTitle":"Des exemples concrets","guaranteeEyebrow":"Garanties","guaranteeTitle":"Sans risque pour votre activité","fromLabel":"À partir de","faqEyebrow":"Questions fréquentes","faqTitlePrefix":"Spécifique","sector":{"metaTitle":"Agent IA pour comptables, avocats et consultants","metaDescription":"Un standard géré pour votre cabinet, sans jamais rater un client. Agent vocal et chatbot IA pour services professionnels.","eyebrow":"Services professionnels","h1":"Un standard géré pour votre cabinet, sans jamais rater un client","heroSub":"Un agent IA qui filtre, qualifie et prend rendez-vous pendant que vous êtes en rendez-vous ou en audience.","heroDialog":[{"from":"client","text":"Bonjour, j'aurais besoin d'un rendez-vous pour ma déclaration fiscale."},{"from":"agent","text":"Bonjour 👋 Bien sûr, je peux vous proposer mardi 14h ou mercredi 9h."},{"from":"client","text":"Mardi 14h, merci."},{"from":"agent","text":"C'est confirmé ✅, vous recevrez une confirmation par email."}],"painTime":"09h15","painScenario":"Deux appels arrivent en même temps pendant un rendez-vous client. L'un des deux reste sans réponse et ne rappelle pas.","how1t":"Confidentialité des dossiers","how1d":"Aucune information sensible sur un dossier n'est traitée par l'agent, uniquement la prise de contact.","how2t":"Agenda cabinet synchronisé","how2d":"Les rendez-vous sont proposés selon vos disponibilités réelles et le type de consultation.","how3t":"Filtrage du démarchage","how3d":"Les appels commerciaux non sollicités sont identifiés et ne vous dérangent pas inutilement.","uc1t":"Qualification du motif d'appel","uc1d":"Le sujet de la demande est identifié avant la prise de rendez-vous, pour préparer le bon interlocuteur.","uc1dialog":[{"from":"client","text":"C'est pour une question de TVA sur un contrat en cours."},{"from":"agent","text":"Je transmets à votre comptable référent, avec un rendez-vous cette semaine."}],"uc2t":"Prise de rendez-vous cabinet","uc2d":"Le rendez-vous est ajouté à votre agenda, avec confirmation automatique au client.","uc2dialog":[{"from":"agent","text":"Votre rendez-vous du mardi 14h est confirmé."},{"from":"client","text":"Merci, à mardi."}],"consigneTitle":"Un appel de démarchage commercial arrive","consigneQuote":"Les appels de prospection non sollicités sont filtrés, seuls les vrais dossiers clients vous sont transmis.","extraGuarantee":"Confidentialité des dossiers clients","pricingLabel":"Répondeur IA vocal — Services professionnels","pricingFrom":"149 € /mois","ctaTitle":"Prêt à libérer votre standard ?","faqQ":["L'agent a-t-il accès à mes dossiers clients ?","Peut-il filtrer les appels de démarchage ?","Est-ce adapté à un petit cabinet indépendant ?"],"faqA":["Non, il gère uniquement la prise de contact et de rendez-vous, sans accès aux dossiers.","Oui, une règle peut être configurée pour identifier et écarter les appels commerciaux non sollicités.","Oui, l'abonnement Essentiel est pensé pour les structures d'une à quelques personnes."]}},"en":{"nav":{"home":"Home","services":"Services","sectors":"Industries","pricing":"Pricing","contact":"Contact","cta":"Start a project"},"footer":{"tagline":"Belgian AI automation agency, based in Brussels.","servicesTitle":"Services","sectorsTitle":"Industries","contactTitle":"Contact","formLink":"Contact form","location":"Brussels, Belgium","rights":"All rights reserved.","compliance":"GDPR · EU hosting"},"sectorNames":{"immobilier":"Real estate","sante-bien-etre":"Health & wellness","horeca-restauration":"Hospitality & restaurants","services-professionnels":"Professional services","artisans-btp":"Trades & construction","ecommerce-retail":"E-commerce & retail"},"cta":{"start":"Start a project","ask":"Ask a question","details":"See details","discover":"Discover","allPricing":"See all pricing"},"services":{"s1":"AI voice responders","s2":"Chatbots & auto-replies","s3":"Custom development"},"guarantee":{"gdpr":"GDPR & EU hosting","noCommit":"No long-term commitment","fast":"Fast set-up"},"form":{"firstName":"First name","firstNameReq":"First name *","firstNamePh":"John","lastName":"Last name","lastNameReq":"Last name *","lastNamePh":"Smith","email":"Work email","emailReq":"Work email *","emailPh":"john@company.com","company":"Company","companyPh":"Your company name","project":"Your project","projectReq":"Your project *","projectPh":"Describe your needs in a few lines...","submit":"Send my request","sending":"Sending...","error":"Something went wrong. Try again or email contact@talox.be","note":"Reply guaranteed within 24h · No commitment","success":"Message sent! We'll get back to you within 24 hours."},"breadcrumbHome":"Home","breadcrumbSectors":"Industries","demoStatus":"Online","howEyebrow":"Built for your business","howTitle":"How it works for you","usecaseEyebrow":"Use cases","usecaseTitle":"Real-world examples","guaranteeEyebrow":"Guarantees","guaranteeTitle":"Risk-free for your business","fromLabel":"From","faqEyebrow":"FAQ","faqTitlePrefix":"Specific to","sector":{"metaTitle":"AI agent for accountants, lawyers and consultants","metaDescription":"A managed switchboard for your practice, without ever missing a client. AI voice agent and chatbot for professional services.","eyebrow":"Professional services","h1":"A managed switchboard for your practice, without ever missing a client","heroSub":"An AI agent that filters, qualifies and books appointments while you're in a meeting or a hearing.","heroDialog":[{"from":"client","text":"Hi, I'd need an appointment for my tax return."},{"from":"agent","text":"Hello 👋 Of course, I can offer Tuesday 2pm or Wednesday 9am."},{"from":"client","text":"Tuesday 2pm, thanks."},{"from":"agent","text":"Confirmed ✅, you'll get an email confirmation."}],"painTime":"9:15am","painScenario":"Two calls come in at once during a client meeting. One of them goes unanswered and never calls back.","how1t":"File confidentiality","how1d":"No sensitive case information is handled by the agent, only initial contact.","how2t":"Synced practice calendar","how2d":"Appointments are offered based on your real availability and the type of consultation.","how3t":"Cold-call filtering","how3d":"Unsolicited sales calls are identified and don't needlessly disturb you.","uc1t":"Qualifying the reason for the call","uc1d":"The subject of the request is identified before booking, to prepare the right contact person.","uc1dialog":[{"from":"client","text":"It's about VAT on an ongoing contract."},{"from":"agent","text":"I'll pass this to your usual accountant, with an appointment this week."}],"uc2t":"Practice appointment booking","uc2d":"The appointment is added to your calendar, with an automatic confirmation to the client.","uc2dialog":[{"from":"agent","text":"Your Tuesday 2pm appointment is confirmed."},{"from":"client","text":"Thanks, see you Tuesday."}],"consigneTitle":"A cold sales call comes in","consigneQuote":"Unsolicited sales calls are filtered out, only real client matters are passed on to you.","extraGuarantee":"Client file confidentiality","pricingLabel":"AI voice responder — Professional services","pricingFrom":"€149 /month","ctaTitle":"Ready to free up your switchboard?","faqQ":["Does the agent have access to my client files?","Can it filter out cold sales calls?","Is this suited to a small independent practice?"],"faqA":["No, it only handles initial contact and booking, with no access to files.","Yes, a rule can be configured to identify and screen out unsolicited sales calls.","Yes, the Essential plan is designed for practices of one to a few people."]}},"nl":{"nav":{"home":"Home","services":"Diensten","sectors":"Sectoren","pricing":"Tarieven","contact":"Contact","cta":"Start een project"},"footer":{"tagline":"Belgisch AI-automatiseringsbureau, gevestigd in Brussel.","servicesTitle":"Diensten","sectorsTitle":"Sectoren","contactTitle":"Contact","formLink":"Contactformulier","location":"Brussel, België","rights":"Alle rechten voorbehouden.","compliance":"AVG · Hosting in de EU"},"sectorNames":{"immobilier":"Vastgoed","sante-bien-etre":"Gezondheid & welzijn","horeca-restauration":"Horeca","services-professionnels":"Zakelijke dienstverlening","artisans-btp":"Vakmannen & bouw","ecommerce-retail":"E-commerce & retail"},"cta":{"start":"Start een project","ask":"Stel een vraag","details":"Bekijk details","discover":"Ontdekken","allPricing":"Alle tarieven bekijken"},"services":{"s1":"AI-spraakassistenten","s2":"Chatbots & auto-antwoorden","s3":"Maatwerkontwikkeling"},"guarantee":{"gdpr":"AVG & hosting in de EU","noCommit":"Geen lange verbintenis","fast":"Snelle opstart"},"form":{"firstName":"Voornaam","firstNameReq":"Voornaam *","firstNamePh":"Jan","lastName":"Naam","lastNameReq":"Naam *","lastNamePh":"Janssens","email":"Zakelijk e-mailadres","emailReq":"Zakelijk e-mailadres *","emailPh":"jan@bedrijf.be","company":"Bedrijf","companyPh":"Naam van uw bedrijf","project":"Uw project","projectReq":"Uw project *","projectPh":"Beschrijf uw behoefte in enkele zinnen...","submit":"Verstuur mijn aanvraag","sending":"Bezig met verzenden...","error":"Er is een fout opgetreden. Probeer opnieuw of mail naar contact@talox.be","note":"Reactie gegarandeerd binnen 24u · Geen verbintenis","success":"Bericht verzonden! We reageren binnen 24 uur."},"breadcrumbHome":"Home","breadcrumbSectors":"Sectoren","demoStatus":"Online","howEyebrow":"Gemaakt voor uw vak","howTitle":"Hoe het voor u werkt","usecaseEyebrow":"Praktijkvoorbeelden","usecaseTitle":"Concrete voorbeelden","guaranteeEyebrow":"Garanties","guaranteeTitle":"Risicovrij voor uw activiteit","fromLabel":"Vanaf","faqEyebrow":"Veelgestelde vragen","faqTitlePrefix":"Specifiek voor","sector":{"metaTitle":"AI-agent voor boekhouders, advocaten en consultants","metaDescription":"Een beheerd onthaal voor uw kantoor, zonder ooit een klant te missen. AI-spraakagent en chatbot voor zakelijke dienstverlening.","eyebrow":"Zakelijke dienstverlening","h1":"Een beheerd onthaal voor uw kantoor, zonder ooit een klant te missen","heroSub":"Een AI-agent die filtert, kwalificeert en afspraken inplant terwijl u in vergadering of zitting bent.","heroDialog":[{"from":"client","text":"Goeiedag, ik zou een afspraak willen voor mijn belastingaangifte."},{"from":"agent","text":"Hallo 👋 Zeker, ik kan dinsdag 14u of woensdag 9u voorstellen."},{"from":"client","text":"Dinsdag 14u, bedankt."},{"from":"agent","text":"Bevestigd ✅, u ontvangt een bevestiging per e-mail."}],"painTime":"09u15","painScenario":"Twee oproepen komen tegelijk binnen tijdens een klantafspraak. Een ervan blijft onbeantwoord en belt niet terug.","how1t":"Vertrouwelijkheid van dossiers","how1d":"Er wordt geen gevoelige dossierinformatie door de agent behandeld, enkel het eerste contact.","how2t":"Gesynchroniseerde kantooragenda","how2d":"Afspraken worden voorgesteld op basis van uw echte beschikbaarheid en het type consultatie.","how3t":"Filtering van commerciële prospectie","how3d":"Ongevraagde verkoopoproepen worden herkend en storen u niet onnodig.","uc1t":"Kwalificatie van de reden van de oproep","uc1d":"Het onderwerp van de aanvraag wordt geïdentificeerd voor de afspraak, om de juiste contactpersoon voor te bereiden.","uc1dialog":[{"from":"client","text":"Het gaat over btw op een lopend contract."},{"from":"agent","text":"Ik geef dit door aan uw vaste boekhouder, met een afspraak deze week."}],"uc2t":"Kantoorafspraak inplannen","uc2d":"De afspraak wordt aan uw agenda toegevoegd, met automatische bevestiging aan de klant.","uc2dialog":[{"from":"agent","text":"Uw afspraak van dinsdag 14u is bevestigd."},{"from":"client","text":"Bedankt, tot dinsdag."}],"consigneTitle":"Een commerciële verkoopoproep komt binnen","consigneQuote":"Ongevraagde prospectieoproepen worden gefilterd, enkel echte klantendossiers worden aan u doorgegeven.","extraGuarantee":"Vertrouwelijkheid van klantendossiers","pricingLabel":"AI-spraakassistent — Zakelijke dienstverlening","pricingFrom":"€ 149 /maand","ctaTitle":"Klaar om uw onthaal te ontlasten?","faqQ":["Heeft de agent toegang tot mijn klantendossiers?","Kan het commerciële verkoopoproepen filteren?","Is dit geschikt voor een klein zelfstandig kantoor?"],"faqA":["Nee, hij beheert enkel het eerste contact en de afspraak, zonder toegang tot dossiers.","Ja, een regel kan geconfigureerd worden om ongevraagde verkoopoproepen te herkennen en te weren.","Ja, het Essentieel-abonnement is ontworpen voor structuren van één tot enkele personen."]}}};
+</script>
 </body>
 </html>

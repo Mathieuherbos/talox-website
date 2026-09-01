@@ -9,14 +9,16 @@
 <link rel="canonical" href="https://talox.be/tarifs.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tarifs TALOX — des prix clairs, sans simulateur">
-<meta property="og:description" content="Répondeurs vocaux IA, chatbots et automatisations sur-mesure : nos tarifs de départ affichés clairement.">
+<meta property="og:title" content="Tarifs — Répondeurs vocaux IA, chatbots et automatisations | TALOX">
+<meta property="og:description" content="Des prix clairs, sans simulateur à remplir. Répondeurs vocaux IA dès 149€/mois, chatbots dès 1200€, automatisations sur-mesure dès 1800€.">
 <meta property="og:url" content="https://talox.be/tarifs.html">
+<meta property="og:image" content="https://talox.be/images/og-talox.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://talox.be/images/og-talox.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
 <script src="js/main.js" defer></script>
@@ -26,27 +28,34 @@
 
 <header class="site-header">
   <div class="container">
-    <a href="./" class="logo" aria-label="TALOX, accueil">TALOX<span>.</span></a>
-    <nav class="main-nav" aria-label="Navigation principale">
+    <a href="./" class="logo" aria-label="TALOX, accueil">
+      <span class="logo-dot" aria-hidden="true"></span>TALOX
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <ul>
-        <li><a href="./">Accueil</a></li>
-        <li><a href="index.html#services">Services</a></li>
+        <li><a href="./" data-i18n="nav.home"></a></li>
+        <li><a href="index.html#services" data-i18n="nav.services"></a></li>
         <li class="has-dropdown">
-          <a href="index.html#secteurs" aria-haspopup="true">Secteurs</a>
+          <a href="index.html#secteurs" aria-haspopup="true" data-i18n="nav.sectors"></a>
           <div class="dropdown">
-            <a href="secteurs/immobilier.html">Immobilier</a>
-            <a href="secteurs/sante-bien-etre.html">Santé &amp; bien-être</a>
-            <a href="secteurs/horeca-restauration.html">Horeca &amp; restauration</a>
-            <a href="secteurs/services-professionnels.html">Services professionnels</a>
-            <a href="secteurs/artisans-btp.html">Artisans &amp; BTP</a>
-            <a href="secteurs/ecommerce-retail.html">E-commerce &amp; retail</a>
+            <a href="secteurs/immobilier.html" data-i18n="sectorNames.immobilier"></a>
+            <a href="secteurs/sante-bien-etre.html" data-i18n="sectorNames.sante-bien-etre"></a>
+            <a href="secteurs/horeca-restauration.html" data-i18n="sectorNames.horeca-restauration"></a>
+            <a href="secteurs/services-professionnels.html" data-i18n="sectorNames.services-professionnels"></a>
+            <a href="secteurs/artisans-btp.html" data-i18n="sectorNames.artisans-btp"></a>
+            <a href="secteurs/ecommerce-retail.html" data-i18n="sectorNames.ecommerce-retail"></a>
           </div>
         </li>
-        <li><a href="tarifs.html" aria-current="page">Tarifs</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="tarifs.html" aria-current="page" data-i18n="nav.pricing"></a></li>
+        <li><a href="index.html#contact" data-i18n="nav.contact"></a></li>
       </ul>
       <div class="header-actions">
-        <a href="index.html#contact" class="btn btn-primary btn-sm">Démarrer un projet</a>
+        <div class="lang-switcher" role="group" aria-label="Choix de la langue">
+          <button class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
+        </div>
+        <a href="index.html#contact" class="btn btn-primary btn-sm" data-i18n="nav.cta"></a>
       </div>
     </nav>
     <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
@@ -60,9 +69,9 @@
   <section class="hero" style="padding-bottom: 2rem;">
     <div class="container" style="grid-template-columns: 1fr; text-align:center;">
       <div>
-        <span class="eyebrow">Tarifs</span>
-        <h1>Des prix clairs, sans simulateur à remplir</h1>
-        <p class="hero-subtitle" style="margin-inline:auto;">Contrairement à d'autres agences, on affiche nos tarifs de départ directement. Pas de formulaire à remplir pour connaître un ordre de prix.</p>
+        <span class="eyebrow" data-i18n="hero.eyebrow"></span>
+        <h1 data-i18n="hero.title"></h1>
+        <p class="hero-subtitle" style="margin-inline:auto;" data-i18n="hero.sub"></p>
       </div>
     </div>
   </section>
@@ -70,79 +79,77 @@
   <section>
     <div class="container">
       <div class="grid grid-3">
-
         <div class="card pricing-card">
-          <h3>Répondeurs IA vocaux</h3>
-          <p class="price-from">Essentiel — à partir de</p>
-          <p class="price-value">149 € <small>/mois</small></p>
+          <h3 data-i18n="svcTitle"></h3>
+          <p class="price-from"><span data-i18n="c1.badge"></span> — <span data-i18n="c1.from"></span></p>
+          <p class="price-value"><span data-i18n="c1.v"></span> <small data-i18n="c1.u"></small></p>
           <ul class="price-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Ligne unique</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> FR / NL</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Prise de rendez-vous</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Résumés d'appels par email/SMS</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c1.f1"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c1.f2"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c1.f3"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c1.f4"></span></li>
           </ul>
-          <a href="index.html#contact" class="btn btn-secondary btn-block">Démarrer</a>
-          <p class="price-note">Sans engagement</p>
+          <a href="index.html#contact" class="btn btn-secondary btn-block" data-i18n="cta.start"></a>
+          <p class="price-note" data-i18n="c1.note"></p>
         </div>
 
         <div class="card pricing-card featured">
-          <span class="pricing-badge">Le plus choisi</span>
-          <h3>Répondeurs IA vocaux</h3>
-          <p class="price-from">Pro — à partir de</p>
-          <p class="price-value">249 € <small>/mois</small></p>
+          <span class="pricing-badge" data-i18n="c2.badge"></span>
+          <h3 data-i18n="svcTitle"></h3>
+          <p class="price-from"><span data-i18n="c2.label"></span> — <span data-i18n="c2.from"></span></p>
+          <p class="price-value"><span data-i18n="c2.v"></span> <small data-i18n="c2.u"></small></p>
           <ul class="price-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Multi-lignes</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> CRM avancé</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Multilingue étendu</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Résumés d'appels par email/SMS</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c2.f1"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c2.f2"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c2.f3"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c2.f4"></span></li>
           </ul>
-          <a href="index.html#contact" class="btn btn-primary btn-block">Démarrer</a>
-          <p class="price-note">Sans engagement</p>
+          <a href="index.html#contact" class="btn btn-primary btn-block" data-i18n="cta.start"></a>
+          <p class="price-note" data-i18n="c2.note"></p>
         </div>
 
         <div class="card pricing-card">
-          <h3>Répondeurs IA vocaux</h3>
-          <p class="price-from">Sur-mesure</p>
-          <p class="price-value">Sur devis</p>
+          <h3 data-i18n="svcTitle"></h3>
+          <p class="price-from" data-i18n="c3.label"></p>
+          <p class="price-value" data-i18n="c3.v"></p>
           <ul class="price-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Besoins spécifiques (volumes, intégrations)</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Accompagnement dédié</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c3.f1"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c3.f2"></span></li>
           </ul>
-          <a href="index.html#contact" class="btn btn-secondary btn-block">Poser une question</a>
+          <a href="index.html#contact" class="btn btn-secondary btn-block" data-i18n="cta.ask"></a>
         </div>
-
       </div>
 
       <div class="grid grid-2 mt-2">
         <div class="card pricing-card">
-          <h3>Chatbots &amp; réponses automatiques</h3>
-          <p class="price-from">À partir de</p>
-          <p class="price-value">1 200 € <small>mise en place</small></p>
-          <p class="text-muted">+ 150 €/mois de maintenance et d'hébergement</p>
+          <h3 data-i18n="c4.title"></h3>
+          <p class="price-from" data-i18n="c4.from"></p>
+          <p class="price-value"><span data-i18n="c4.v"></span> <small data-i18n="c4.u"></small></p>
+          <p class="text-muted" data-i18n="c4.sub"></p>
           <ul class="price-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Email, WhatsApp, site web</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Entraîné sur votre activité</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Escalade intelligente vers un humain</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c4.f1"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c4.f2"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c4.f3"></span></li>
           </ul>
           <div class="cta-row">
-            <a href="index.html#contact" class="btn btn-primary">Démarrer</a>
-            <a href="index.html#contact" class="btn btn-secondary">Poser une question</a>
+            <a href="index.html#contact" class="btn btn-primary" data-i18n="cta.start"></a>
+            <a href="index.html#contact" class="btn btn-secondary" data-i18n="cta.ask"></a>
           </div>
         </div>
 
         <div class="card pricing-card">
-          <h3>Développements sur mesure</h3>
-          <p class="price-from">À partir de</p>
-          <p class="price-value">1 800 € <small>/automatisation</small></p>
-          <p class="text-muted">Projets d'intégration complexe sur devis</p>
+          <h3 data-i18n="c5.title"></h3>
+          <p class="price-from" data-i18n="c5.from"></p>
+          <p class="price-value"><span data-i18n="c5.v"></span> <small data-i18n="c5.u"></small></p>
+          <p class="text-muted" data-i18n="c5.sub"></p>
           <ul class="price-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Workflows n8n</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Intégrations CRM / ERP</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Formation incluse</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c5.f1"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c5.f2"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="c5.f3"></span></li>
           </ul>
           <div class="cta-row">
-            <a href="index.html#contact" class="btn btn-primary">Démarrer</a>
-            <a href="index.html#contact" class="btn btn-secondary">Poser une question</a>
+            <a href="index.html#contact" class="btn btn-primary" data-i18n="cta.start"></a>
+            <a href="index.html#contact" class="btn btn-secondary" data-i18n="cta.ask"></a>
           </div>
         </div>
       </div>
@@ -152,22 +159,13 @@
   <section class="section-alt">
     <div class="container">
       <div class="section-intro">
-        <span class="eyebrow">Mise en perspective</span>
-        <h2>À comparer avec vos alternatives actuelles</h2>
+        <span class="eyebrow" data-i18n="reassur.eyebrow"></span>
+        <h2 data-i18n="reassur.title"></h2>
       </div>
       <div class="reassurance-compare">
-        <div class="reassurance-item">
-          <div class="amount">300 à 800 €</div>
-          <div class="label">Secrétariat externalisé / mois</div>
-        </div>
-        <div class="reassurance-item">
-          <div class="amount">2 500 € +</div>
-          <div class="label">Embauche à temps plein / mois</div>
-        </div>
-        <div class="reassurance-item talox">
-          <div class="amount">Dès 149 €</div>
-          <div class="label">Répondeur IA TALOX / mois</div>
-        </div>
+        <div class="reassurance-item"><div class="amount" data-i18n="reassur.r1v"></div><div class="label" data-i18n="reassur.r1l"></div></div>
+        <div class="reassurance-item"><div class="amount" data-i18n="reassur.r2v"></div><div class="label" data-i18n="reassur.r2l"></div></div>
+        <div class="reassurance-item talox"><div class="amount" data-i18n="reassur.r3v"></div><div class="label" data-i18n="reassur.r3l"></div></div>
       </div>
     </div>
   </section>
@@ -175,85 +173,89 @@
   <section id="faq">
     <div class="container">
       <div class="section-intro">
-        <span class="eyebrow">Questions fréquentes</span>
-        <h2>Sur nos tarifs</h2>
+        <span class="eyebrow" data-i18n="faq.eyebrow"></span>
+        <h2 data-i18n="faq.title"></h2>
       </div>
       <div class="faq-list">
         <details class="faq-item">
-          <summary class="faq-question">Comment se passe la facturation ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-          <p class="faq-answer">Facturation mensuelle pour les abonnements (répondeurs, maintenance chatbot), et facturation au projet pour la mise en place et les développements sur mesure.</p>
+          <summary class="faq-question"><span data-i18n="faq.q1"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+          <p class="faq-answer" data-i18n="faq.a1"></p>
         </details>
         <details class="faq-item">
-          <summary class="faq-question">Y a-t-il un engagement ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-          <p class="faq-answer">Non, les abonnements répondeurs et chatbot sont sans engagement long. Les projets sur mesure sont ponctuels, sans abonnement forcé.</p>
+          <summary class="faq-question"><span data-i18n="faq.q2"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+          <p class="faq-answer" data-i18n="faq.a2"></p>
         </details>
         <details class="faq-item">
-          <summary class="faq-question">Qu'est-ce qui fait varier le prix ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-          <p class="faq-answer">Le volume d'appels ou de messages, le nombre de langues, les intégrations avec vos outils existants (CRM, agenda, caisse) et la complexité des règles métier.</p>
+          <summary class="faq-question"><span data-i18n="faq.q3"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+          <p class="faq-answer" data-i18n="faq.a3"></p>
         </details>
         <details class="faq-item">
-          <summary class="faq-question">Peut-on tester avant de s'engager ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-          <p class="faq-answer">Contactez-nous : on évalue avec vous la meilleure façon de démarrer, souvent avec un périmètre réduit avant un déploiement complet.</p>
+          <summary class="faq-question"><span data-i18n="faq.q4"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+          <p class="faq-answer" data-i18n="faq.a4"></p>
         </details>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section-dark">
+  <section id="contact" class="section-highlight">
     <div class="container text-center">
-      <h2>Un prix vous convient ?</h2>
-      <p class="text-muted mt-2">Contactez-nous, on revient vers vous sous 24h.</p>
+      <h2 data-i18n="ctaTitle"></h2>
+      <p class="text-muted mt-2" data-i18n="ctaSub"></p>
       <div class="cta-row" style="justify-content:center; margin-top:1.5rem;">
-        <a href="index.html#contact" class="btn btn-accent">Démarrer un projet</a>
-        <a href="mailto:contact@talox.be" class="btn btn-ghost">Poser une question</a>
+        <a href="index.html#contact" class="btn btn-primary" data-i18n="cta.start"></a>
+        <a href="mailto:contact@talox.be" class="btn btn-ghost" data-i18n="cta.ask"></a>
       </div>
     </div>
   </section>
 
 </main>
 
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="./" class="logo">TALOX<span>.</span></a>
-        <p>Agence belge d'automatisation IA, basée à Bruxelles.</p>
+        <a href="./" class="logo"><span class="logo-dot" aria-hidden="true"></span>TALOX</a>
+        <p data-i18n="footer.tagline"></p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="footer.servicesTitle"></h4>
         <ul>
-          <li><a href="index.html#services">Répondeurs IA vocaux</a></li>
-          <li><a href="index.html#services">Chatbots &amp; réponses auto</a></li>
-          <li><a href="index.html#services">Développements sur mesure</a></li>
-          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="index.html#services" data-i18n="services.s1"></a></li>
+          <li><a href="index.html#services" data-i18n="services.s2"></a></li>
+          <li><a href="index.html#services" data-i18n="services.s3"></a></li>
+          <li><a href="tarifs.html" data-i18n="nav.pricing"></a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Secteurs</h4>
+        <h4 data-i18n="footer.sectorsTitle"></h4>
         <ul>
-          <li><a href="secteurs/immobilier.html">Immobilier</a></li>
-          <li><a href="secteurs/sante-bien-etre.html">Santé &amp; bien-être</a></li>
-          <li><a href="secteurs/horeca-restauration.html">Horeca</a></li>
-          <li><a href="secteurs/services-professionnels.html">Services pro</a></li>
-          <li><a href="secteurs/artisans-btp.html">Artisans &amp; BTP</a></li>
-          <li><a href="secteurs/ecommerce-retail.html">E-commerce</a></li>
+          <li><a href="secteurs/immobilier.html" data-i18n="sectorNames.immobilier"></a></li>
+          <li><a href="secteurs/sante-bien-etre.html" data-i18n="sectorNames.sante-bien-etre"></a></li>
+          <li><a href="secteurs/horeca-restauration.html" data-i18n="sectorNames.horeca-restauration"></a></li>
+          <li><a href="secteurs/services-professionnels.html" data-i18n="sectorNames.services-professionnels"></a></li>
+          <li><a href="secteurs/artisans-btp.html" data-i18n="sectorNames.artisans-btp"></a></li>
+          <li><a href="secteurs/ecommerce-retail.html" data-i18n="sectorNames.ecommerce-retail"></a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="footer.contactTitle"></h4>
         <ul>
           <li><a href="mailto:contact@talox.be">contact@talox.be</a></li>
-          <li><a href="index.html#contact">Formulaire de contact</a></li>
-          <li>Bruxelles, Belgique</li>
+          <li><a href="index.html#contact" data-i18n="footer.formLink"></a></li>
+          <li data-i18n="footer.location"></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> TALOX. Tous droits réservés.</span>
-      <span>RGPD · Hébergement UE</span>
+      <span>© <span data-year>2026</span> TALOX. <span data-i18n="footer.rights"></span></span>
+      <span data-i18n="footer.compliance"></span>
     </div>
   </div>
 </footer>
 
+<script>
+window.TALOX_I18N = {"fr":{"nav":{"home":"Accueil","services":"Services","sectors":"Secteurs","pricing":"Tarifs","contact":"Contact","cta":"Démarrer un projet"},"footer":{"tagline":"Agence belge d'automatisation IA, basée à Bruxelles.","servicesTitle":"Services","sectorsTitle":"Secteurs","contactTitle":"Contact","formLink":"Formulaire de contact","location":"Bruxelles, Belgique","rights":"Tous droits réservés.","compliance":"RGPD · Hébergement UE"},"sectorNames":{"immobilier":"Immobilier","sante-bien-etre":"Santé & bien-être","horeca-restauration":"Horeca & restauration","services-professionnels":"Services professionnels","artisans-btp":"Artisans & BTP","ecommerce-retail":"E-commerce & retail"},"cta":{"start":"Démarrer un projet","ask":"Poser une question","details":"Voir le détail","discover":"Découvrir","allPricing":"Voir tous les tarifs"},"services":{"s1":"Répondeurs IA vocaux","s2":"Chatbots & réponses auto","s3":"Développements sur mesure"},"guarantee":{"gdpr":"RGPD & hébergement UE","noCommit":"Sans engagement long","fast":"Mise en place rapide"},"form":{"firstName":"Prénom","firstNameReq":"Prénom *","firstNamePh":"Jean","lastName":"Nom","lastNameReq":"Nom *","lastNamePh":"Dupont","email":"Email professionnel","emailReq":"Email professionnel *","emailPh":"jean@entreprise.be","company":"Entreprise","companyPh":"Nom de votre société","project":"Votre projet","projectReq":"Votre projet *","projectPh":"Décrivez votre besoin en quelques lignes...","submit":"Envoyer ma demande","sending":"Envoi en cours...","error":"Une erreur est survenue. Réessayez ou écrivez à contact@talox.be","note":"Réponse garantie sous 24h · Aucun engagement","success":"Message envoyé ! Nous vous répondrons sous 24 heures."},"breadcrumbHome":"Accueil","breadcrumbSectors":"Secteurs","demoStatus":"En ligne","howEyebrow":"Adapté à votre métier","howTitle":"Comment ça marche pour vous","usecaseEyebrow":"Cas d'usage","usecaseTitle":"Des exemples concrets","guaranteeEyebrow":"Garanties","guaranteeTitle":"Sans risque pour votre activité","fromLabel":"À partir de","faqEyebrow":"Questions fréquentes","faqTitlePrefix":"Spécifique","hero":{"eyebrow":"Tarifs","title":"Des prix clairs, sans simulateur à remplir","sub":"Contrairement à d'autres agences, on affiche nos tarifs de départ directement. Pas de formulaire à remplir pour connaître un ordre de prix."},"c1":{"badge":"Essentiel","from":"À partir de","v":"149 €","u":"/mois","f1":"Ligne unique","f2":"FR / NL","f3":"Prise de rendez-vous","f4":"Résumés d'appels par email/SMS","note":"Sans engagement"},"c2":{"badge":"Le plus choisi","label":"Pro","from":"À partir de","v":"249 €","u":"/mois","f1":"Multi-lignes","f2":"CRM avancé","f3":"Multilingue étendu","f4":"Résumés d'appels par email/SMS","note":"Sans engagement"},"c3":{"label":"Sur-mesure","v":"Sur devis","f1":"Besoins spécifiques (volumes, intégrations)","f2":"Accompagnement dédié"},"svcTitle":"Répondeurs IA vocaux","c4":{"title":"Chatbots & réponses automatiques","from":"À partir de","v":"1 200 €","u":"mise en place","sub":"+ 150 €/mois de maintenance et d'hébergement","f1":"Email, WhatsApp, site web","f2":"Entraîné sur votre activité","f3":"Escalade intelligente vers un humain"},"c5":{"title":"Développements sur mesure","from":"À partir de","v":"1 800 €","u":"/automatisation","sub":"Projets d'intégration complexe sur devis","f1":"Workflows n8n","f2":"Intégrations CRM / ERP","f3":"Formation incluse"},"reassur":{"eyebrow":"Mise en perspective","title":"À comparer avec vos alternatives actuelles","r1v":"300 à 800 €","r1l":"Secrétariat externalisé / mois","r2v":"2 500 € +","r2l":"Embauche à temps plein / mois","r3v":"Dès 149 €","r3l":"Répondeur IA TALOX / mois"},"faq":{"eyebrow":"Questions fréquentes","title":"Sur nos tarifs","q1":"Comment se passe la facturation ?","a1":"Facturation mensuelle pour les abonnements (répondeurs, maintenance chatbot), et facturation au projet pour la mise en place et les développements sur mesure.","q2":"Y a-t-il un engagement ?","a2":"Non, les abonnements répondeurs et chatbot sont sans engagement long. Les projets sur mesure sont ponctuels, sans abonnement forcé.","q3":"Qu'est-ce qui fait varier le prix ?","a3":"Le volume d'appels ou de messages, le nombre de langues, les intégrations avec vos outils existants (CRM, agenda, caisse) et la complexité des règles métier.","q4":"Peut-on tester avant de s'engager ?","a4":"Contactez-nous : on évalue avec vous la meilleure façon de démarrer, souvent avec un périmètre réduit avant un déploiement complet."},"ctaTitle":"Un prix vous convient ?","ctaSub":"Contactez-nous, on revient vers vous sous 24h."},"en":{"nav":{"home":"Home","services":"Services","sectors":"Industries","pricing":"Pricing","contact":"Contact","cta":"Start a project"},"footer":{"tagline":"Belgian AI automation agency, based in Brussels.","servicesTitle":"Services","sectorsTitle":"Industries","contactTitle":"Contact","formLink":"Contact form","location":"Brussels, Belgium","rights":"All rights reserved.","compliance":"GDPR · EU hosting"},"sectorNames":{"immobilier":"Real estate","sante-bien-etre":"Health & wellness","horeca-restauration":"Hospitality & restaurants","services-professionnels":"Professional services","artisans-btp":"Trades & construction","ecommerce-retail":"E-commerce & retail"},"cta":{"start":"Start a project","ask":"Ask a question","details":"See details","discover":"Discover","allPricing":"See all pricing"},"services":{"s1":"AI voice responders","s2":"Chatbots & auto-replies","s3":"Custom development"},"guarantee":{"gdpr":"GDPR & EU hosting","noCommit":"No long-term commitment","fast":"Fast set-up"},"form":{"firstName":"First name","firstNameReq":"First name *","firstNamePh":"John","lastName":"Last name","lastNameReq":"Last name *","lastNamePh":"Smith","email":"Work email","emailReq":"Work email *","emailPh":"john@company.com","company":"Company","companyPh":"Your company name","project":"Your project","projectReq":"Your project *","projectPh":"Describe your needs in a few lines...","submit":"Send my request","sending":"Sending...","error":"Something went wrong. Try again or email contact@talox.be","note":"Reply guaranteed within 24h · No commitment","success":"Message sent! We'll get back to you within 24 hours."},"breadcrumbHome":"Home","breadcrumbSectors":"Industries","demoStatus":"Online","howEyebrow":"Built for your business","howTitle":"How it works for you","usecaseEyebrow":"Use cases","usecaseTitle":"Real-world examples","guaranteeEyebrow":"Guarantees","guaranteeTitle":"Risk-free for your business","fromLabel":"From","faqEyebrow":"FAQ","faqTitlePrefix":"Specific to","hero":{"eyebrow":"Pricing","title":"Clear prices, no form to fill in","sub":"Unlike other agencies, we show our starting prices directly. No form needed to get a sense of the price."},"c1":{"badge":"Essential","from":"From","v":"€149","u":"/month","f1":"Single line","f2":"FR / NL","f3":"Appointment booking","f4":"Call summaries by email/text","note":"No commitment"},"c2":{"badge":"Most popular","label":"Pro","from":"From","v":"€249","u":"/month","f1":"Multiple lines","f2":"Advanced CRM","f3":"Extended multilingual support","f4":"Call summaries by email/text","note":"No commitment"},"c3":{"label":"Custom","v":"On quote","f1":"Specific needs (volumes, integrations)","f2":"Dedicated support"},"svcTitle":"AI voice responders","c4":{"title":"Chatbots & automated replies","from":"From","v":"€1,200","u":"set-up","sub":"+ €150/month maintenance and hosting","f1":"Email, WhatsApp, website","f2":"Trained on your business","f3":"Smart escalation to a human"},"c5":{"title":"Custom development","from":"From","v":"€1,800","u":"/automation","sub":"Complex integration projects on quote","f1":"n8n workflows","f2":"CRM / ERP integrations","f3":"Training included"},"reassur":{"eyebrow":"In perspective","title":"Compare with your current alternatives","r1v":"€300 to €800","r1l":"Outsourced secretarial service / month","r2v":"€2,500 +","r2l":"Full-time hire / month","r3v":"From €149","r3l":"TALOX AI responder / month"},"faq":{"eyebrow":"FAQ","title":"About our pricing","q1":"How does billing work?","a1":"Monthly billing for subscriptions (responders, chatbot maintenance), and project-based billing for set-up and custom development.","q2":"Is there a commitment?","a2":"No, responder and chatbot subscriptions have no long-term commitment. Custom projects are one-off, with no forced subscription.","q3":"What makes the price vary?","a3":"Call or message volume, number of languages, integrations with your existing tools (CRM, calendar, till) and the complexity of your business rules.","q4":"Can I test before committing?","a4":"Contact us: we'll assess with you the best way to start, often with a reduced scope before a full rollout."},"ctaTitle":"Found a price that works?","ctaSub":"Contact us, we'll get back to you within 24h."},"nl":{"nav":{"home":"Home","services":"Diensten","sectors":"Sectoren","pricing":"Tarieven","contact":"Contact","cta":"Start een project"},"footer":{"tagline":"Belgisch AI-automatiseringsbureau, gevestigd in Brussel.","servicesTitle":"Diensten","sectorsTitle":"Sectoren","contactTitle":"Contact","formLink":"Contactformulier","location":"Brussel, België","rights":"Alle rechten voorbehouden.","compliance":"AVG · Hosting in de EU"},"sectorNames":{"immobilier":"Vastgoed","sante-bien-etre":"Gezondheid & welzijn","horeca-restauration":"Horeca","services-professionnels":"Zakelijke dienstverlening","artisans-btp":"Vakmannen & bouw","ecommerce-retail":"E-commerce & retail"},"cta":{"start":"Start een project","ask":"Stel een vraag","details":"Bekijk details","discover":"Ontdekken","allPricing":"Alle tarieven bekijken"},"services":{"s1":"AI-spraakassistenten","s2":"Chatbots & auto-antwoorden","s3":"Maatwerkontwikkeling"},"guarantee":{"gdpr":"AVG & hosting in de EU","noCommit":"Geen lange verbintenis","fast":"Snelle opstart"},"form":{"firstName":"Voornaam","firstNameReq":"Voornaam *","firstNamePh":"Jan","lastName":"Naam","lastNameReq":"Naam *","lastNamePh":"Janssens","email":"Zakelijk e-mailadres","emailReq":"Zakelijk e-mailadres *","emailPh":"jan@bedrijf.be","company":"Bedrijf","companyPh":"Naam van uw bedrijf","project":"Uw project","projectReq":"Uw project *","projectPh":"Beschrijf uw behoefte in enkele zinnen...","submit":"Verstuur mijn aanvraag","sending":"Bezig met verzenden...","error":"Er is een fout opgetreden. Probeer opnieuw of mail naar contact@talox.be","note":"Reactie gegarandeerd binnen 24u · Geen verbintenis","success":"Bericht verzonden! We reageren binnen 24 uur."},"breadcrumbHome":"Home","breadcrumbSectors":"Sectoren","demoStatus":"Online","howEyebrow":"Gemaakt voor uw vak","howTitle":"Hoe het voor u werkt","usecaseEyebrow":"Praktijkvoorbeelden","usecaseTitle":"Concrete voorbeelden","guaranteeEyebrow":"Garanties","guaranteeTitle":"Risicovrij voor uw activiteit","fromLabel":"Vanaf","faqEyebrow":"Veelgestelde vragen","faqTitlePrefix":"Specifiek voor","hero":{"eyebrow":"Tarieven","title":"Duidelijke prijzen, geen formulier nodig","sub":"In tegenstelling tot andere bureaus tonen wij onze startprijzen meteen. Geen formulier nodig om een prijsidee te krijgen."},"c1":{"badge":"Essentieel","from":"Vanaf","v":"€ 149","u":"/maand","f1":"Eén lijn","f2":"FR / NL","f3":"Afspraken inplannen","f4":"Oproepsamenvattingen via e-mail/sms","note":"Geen verbintenis"},"c2":{"badge":"Meest gekozen","label":"Pro","from":"Vanaf","v":"€ 249","u":"/maand","f1":"Meerdere lijnen","f2":"Geavanceerde CRM","f3":"Uitgebreid meertalig","f4":"Oproepsamenvattingen via e-mail/sms","note":"Geen verbintenis"},"c3":{"label":"Op maat","v":"Op offerte","f1":"Specifieke behoeften (volumes, integraties)","f2":"Toegewijde begeleiding"},"svcTitle":"AI-spraakassistenten","c4":{"title":"Chatbots & automatische antwoorden","from":"Vanaf","v":"€ 1.200","u":"opstart","sub":"+ € 150/maand onderhoud en hosting","f1":"E-mail, WhatsApp, website","f2":"Getraind op uw activiteit","f3":"Slimme doorschakeling naar een mens"},"c5":{"title":"Maatwerkontwikkeling","from":"Vanaf","v":"€ 1.800","u":"/automatisering","sub":"Complexe integratieprojecten op offerte","f1":"n8n-workflows","f2":"CRM- / ERP-integraties","f3":"Opleiding inbegrepen"},"reassur":{"eyebrow":"In perspectief","title":"Vergelijk met uw huidige alternatieven","r1v":"€ 300 tot € 800","r1l":"Uitbesteed secretariaat / maand","r2v":"€ 2.500 +","r2l":"Voltijdse aanwerving / maand","r3v":"Vanaf € 149","r3l":"TALOX AI-assistent / maand"},"faq":{"eyebrow":"Veelgestelde vragen","title":"Over onze tarieven","q1":"Hoe verloopt de facturatie?","a1":"Maandelijkse facturatie voor abonnementen (assistenten, chatbotonderhoud), en projectfacturatie voor opstart en maatwerkontwikkeling.","q2":"Is er een verbintenis?","a2":"Nee, de abonnementen voor assistenten en chatbots kennen geen lange verbintenis. Maatwerkprojecten zijn eenmalig, zonder verplicht abonnement.","q3":"Wat doet de prijs variëren?","a3":"Het volume aan oproepen of berichten, het aantal talen, integraties met uw bestaande tools (CRM, agenda, kassa) en de complexiteit van de bedrijfsregels.","q4":"Kan ik testen voor ik me engageer?","a4":"Neem contact op: we bekijken samen de beste manier om te starten, vaak met een beperkte scope voor een volledige uitrol."},"ctaTitle":"Past een van deze prijzen bij u?","ctaSub":"Neem contact op, we reageren binnen 24u."}};
+</script>
 </body>
 </html>

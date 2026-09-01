@@ -49,22 +49,29 @@ Le repo est déjà poussé sur `https://github.com/Mathieuherbos/talox-website`.
 
 Tous les liens internes du site sont en chemins relatifs (pas de `/tarifs.html` en absolu), donc la navigation fonctionne aussi bien à la racine d'un domaine (Hostinger) que dans un sous-dossier (`mathieuherbos.github.io/talox-website/`). Aucune configuration supplémentaire nécessaire.
 
+## Sélecteur de langue FR/EN/NL
+
+Comme sur talox.be (V1), tout le texte traduisible porte un attribut `data-i18n="cle"` (ou `data-i18n-placeholder="cle"` pour les champs de formulaire) et reste vide dans le HTML brut. Le contenu réel vit dans un objet `window.TALOX_I18N = { fr: {...}, en: {...}, nl: {...} }` inclus dans un `<script>` en bas de chaque page. Au chargement, `js/main.js` lit la langue mémorisée (`localStorage`, clé `talox_lang`, défaut `fr`) et remplit chaque élément `[data-i18n]` avec le texte correspondant. Cliquer sur FR/EN/NL dans le header réapplique la traduction sans recharger la page.
+
+**Important — ceci change la façon d'éditer le contenu** par rapport à une page HTML classique : le texte visible ne se modifie plus directement dans les balises, il faut éditer l'objet JSON en bas de fichier.
+
 ## Éditer le contenu
 
-- **Textes des sections communes** (hero, services, FAQ générale, pricing résumé) : directement dans `index.html`
-- **Tarifs** : `tarifs.html`
-- **Contenu par secteur** : chaque fichier `secteurs/[slug].html` contient un bloc clairement délimité :
+- **Éditer un texte existant** : dans le fichier concerné (`index.html`, `tarifs.html`, `secteurs/[slug].html`), cherche le `<script>` juste avant `</body>` contenant `window.TALOX_I18N = {...}`. Modifie la valeur voulue dans `fr`, `en` et `nl` (les trois, pour rester cohérent). Le HTML au-dessus n'a normalement pas besoin d'être touché, sauf pour ajouter/retirer un bloc entier.
+- **Contenu par secteur** : chaque fichier `secteurs/[slug].html` a son bloc structurel délimité par :
   ```html
   <!-- CONTENU EDITABLE: début -->
   ...
   <!-- CONTENU EDITABLE: fin -->
   ```
-  Tout ce qui est spécifique au secteur (hero, cas d'usage, FAQ) est dans ce bloc. Le header, footer et style restent identiques d'une page à l'autre.
-- **Ajouter un 7e secteur** : duplique un fichier existant dans `secteurs/`, modifie le contenu dans le bloc éditable, ajoute un lien vers la nouvelle page dans la navigation (`.dropdown` du header) et le footer de **toutes** les pages, plus une entrée dans `sitemap.xml`.
+  Ce bloc ne contient que la structure (les `data-i18n="sector.xxx"`) ; le texte réel de ce secteur est dans son propre objet `TALOX_I18N` en bas de la même page, sous la clé `sector`.
+- **Ajouter un 7e secteur** : duplique un fichier existant dans `secteurs/`, adapte le bloc éditable et l'objet `sector` du `TALOX_I18N` (les 3 langues), ajoute un lien dans la navigation (`.dropdown` du header) et le footer de **toutes** les pages, plus une entrée dans `sitemap.xml`.
 - **Numéro de démo vocal réel** : dans `js/demo-chat.js`, passer `DEMO_CONFIG.mode` de `'scripted'` à `'phone'` et renseigner `DEMO_CONFIG.phone.number`.
+- **Formulaire de contact** : branché sur le même endpoint Formspree que la V1 (`https://formspree.io/f/xqegploo`), visible dans l'attribut `action` du `<form>` sur `index.html`. Change-le si tu veux utiliser un autre compte/endpoint.
 
-## Ce qui n'est volontairement pas inclus dans cette V1 de la V2
+## Ce qui a changé par rapport à la première version de cette V2
 
-- **Sélecteur FR/EN/NL** : le site actuel en avait un, cette V2 est en français uniquement pour l'instant (le brief ne demandait pas de traduire les 8 pages). A ajouter si nécessaire.
-- **Vidéo de fond dans le hero** : remplacée par un dégradé CSS + démo de chat animée, en attendant un asset vidéo.
-- **Vrai numéro de démo vocal** : la démo est simulée en JS (voir ci-dessus), prête à basculer sur un vrai numéro.
+- **Identité visuelle** : alignée sur talox.be actuel plutôt que sur une palette claire inventée — fond quasi-noir `#08090f`, dégradés violets, cartes vitrées, texture de grain, vidéo en fond du hero (même source vidéo que la V1, hébergée sur Pexels).
+- **FR/EN/NL** : ajouté sur les 8 pages (voir section ci-dessus), avec le même mécanisme que talox.be.
+- **Formulaire** : envoie réellement les messages via Formspree au lieu d'ouvrir un client mail.
+- **Bugs corrigés** : contraste texte/fond dans le formulaire, et robustesse des boutons (`flex-shrink: 0`, gradient réutilisable) pour éviter tout texte qui déborde.

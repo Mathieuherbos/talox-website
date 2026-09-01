@@ -1,6 +1,8 @@
 // TALOX — démo de conversation simulée (hero)
 // Conçu pour être remplacé facilement par un vrai widget/numéro d'appel :
-// voir DEMO_CONFIG.mode ci-dessous.
+// voir DEMO_CONFIG.mode ci-dessous. Le script de la conversation est lu
+// depuis window.TALOX_I18N[langue].heroDialog (tableau {from, text}) pour
+// suivre le sélecteur de langue ; à défaut, un script FR de secours est utilisé.
 
 const DEMO_CONFIG = {
   mode: 'scripted', // 'scripted' (par défaut, aucun backend) | 'phone' (à activer quand un numéro de démo existe)
@@ -8,7 +10,7 @@ const DEMO_CONFIG = {
     number: '', // ex: '+32 2 000 00 00'
     label: 'Appelez ce numéro pour tester notre agent vocal',
   },
-  script: [
+  fallbackScript: [
     { from: 'client', text: "Bonjour, vous faites encore des devis pour une installation ce mois-ci ?" },
     { from: 'agent', text: "Bonjour 👋 Oui, tout à fait. Je peux prendre vos coordonnées et vous proposer un créneau, ça vous va ?" },
     { from: 'client', text: "Oui parfait, plutôt en fin de semaine si possible." },
@@ -33,15 +35,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (replayBtn) {
     replayBtn.addEventListener('click', () => runScriptedDemo(root));
   }
+
+  document.addEventListener('talox:langchange', () => runScriptedDemo(root));
 });
+
+function getScript() {
+  const lang = document.documentElement.lang || 'fr';
+  const dict = window.TALOX_I18N && window.TALOX_I18N[lang];
+  return (dict && Array.isArray(dict.heroDialog)) ? dict.heroDialog : DEMO_CONFIG.fallbackScript;
+}
 
 function renderPhoneDemo(root) {
   const body = root.querySelector('[data-demo-body]');
   if (!body) return;
   body.innerHTML = `
     <div style="text-align:center; padding: 2rem 0;">
-      <p style="font-size:1.4rem; font-weight:800; margin-bottom:0.5rem;">${DEMO_CONFIG.phone.number}</p>
-      <p style="color:#e4d9ff; font-size:0.92rem;">${DEMO_CONFIG.phone.label}</p>
+      <p style="font-size:1.4rem; font-weight:800; margin-bottom:0.5rem; color:var(--text-white);">${DEMO_CONFIG.phone.number}</p>
+      <p style="color:var(--text-muted); font-size:0.92rem;">${DEMO_CONFIG.phone.label}</p>
     </div>`;
 }
 
@@ -55,10 +65,11 @@ function runScriptedDemo(root) {
   demoTimers = [];
   body.innerHTML = '';
 
+  const script = getScript();
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let delay = 0;
 
-  DEMO_CONFIG.script.forEach((line, i) => {
+  script.forEach((line) => {
     const typingDelay = prefersReducedMotion ? 0 : 500;
     const showDelay = prefersReducedMotion ? 0 : 900;
 
