@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://talox.be/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://talox.be/tarifs.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://talox.be/secteurs/immobilier.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://talox.be/secteurs/sante-bien-etre.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://talox.be/secteurs/horeca-restauration.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://talox.be/secteurs/services-professionnels.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://talox.be/secteurs/artisans-btp.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://talox.be/secteurs/ecommerce-retail.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>

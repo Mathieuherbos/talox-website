@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://talox.be/sitemap.xml
